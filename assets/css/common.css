@@ -44,12 +44,9 @@
   /* 더 추가사항이 있을까요?*/
 }
 
-/* body */ 
-body {
-	background-color: var(--body-color);
-}
-
 .wrap {
+	border: 1px solid red;
+	margin-top: 44px;
 	position: absolute;
 	left: 0;
 	right: 0;
