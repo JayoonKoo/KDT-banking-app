@@ -1,5 +1,8 @@
+body {
+	background-color: var(--body-color);
+}
+
 header {
-	margin-top: 44px;
 	border: 1px solid ;
 }
 
