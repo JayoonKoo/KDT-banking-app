@@ -1,0 +1,20 @@
+header {
+	margin-top: 44px;
+	border: 1px solid ;
+}
+
+.account-info {
+	border: 1px solid;
+}
+
+.ad {
+	border: 1px solid;
+}
+
+.transaction {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 1px solid;
+}
