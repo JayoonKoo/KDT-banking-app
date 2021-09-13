@@ -4,17 +4,28 @@ body {
 
 /* header */
 .home header {
-	margin: 12px 21px 0 27px;
+	margin: 12px 21px 0;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
+.profile-image {
+	width: 33.333333%;
+}
 .profile-image img{
+	margin-left: 6px;
 	width: 43px;
 	display: block;
 }
 .home .title {
+	width: 33.333333%;
 	font-size: 18px;
+	display: flex;
+	justify-content: center;
+}
+.icons {
+	display: flex;
+	margin-left: auto;
+	justify-content: flex-end;
 }
 .icons > img + img {
 	margin-left: 18px;
@@ -23,9 +34,28 @@ body {
 	cursor: pointer;
 }
 
+/* 계좌정보 */
 .account-info {
+	margin: 33px 48px 25px;
 	border: 1px solid;
 }
+.account-number {
+	color: var(--color-gray01);
+	font-weight: 500;
+	margin: 17px 19px 26px;
+	text-align: center;
+}
+.balance {
+	font-weight: 500;
+}
+.balance-text {
+	font-size: 24px;
+	font-weight: 500;
+}
+.balance-text + span {
+	font-size: 14px;
+}
+
 
 .ad {
 	border: 1px solid;
