@@ -2,3 +2,6 @@
 @import url(./reset.css);
 @import url(./common.css);
 
+/* screen */
+@import url(./home.css);
+@import url(./management.css);
