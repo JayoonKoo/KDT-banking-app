@@ -4,17 +4,28 @@ body {
 
 /* header */
 .home header {
-	margin: 12px 21px 0 27px;
+	margin: 12px 21px 0;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
 }
+.profile-image {
+	width: 33.333333%;
+}
 .profile-image img{
+	margin-left: 6px;
 	width: 43px;
 	display: block;
 }
 .home .title {
-	font-size: 18px;
+	width: 33.333333%;
+	font-size: var(--font-large);
+	display: flex;
+	justify-content: center;
+}
+.icons {
+	display: flex;
+	margin-left: auto;
+	justify-content: flex-end;
 }
 .icons > img + img {
 	margin-left: 18px;
@@ -23,9 +34,52 @@ body {
 	cursor: pointer;
 }
 
+
+/* 계좌정보 */
 .account-info {
-	border: 1px solid;
+	position: relative;
+	background-color: #fff;
+	margin: 33px 48px 25px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+	border-radius: 8px;
 }
+.account-number {
+	color: var(--color-gray01);
+	margin: 17px 19px 26px;
+	text-align: center;
+}
+.balance {
+	text-align: center;
+	letter-spacing: 1.5px;
+}
+.balance-text {
+	font-size: var(--font-xlarge);
+	margin-right: 2px;
+}
+.btn-transfer {
+	top: 17px;
+	right: 19px;
+	position: absolute;
+}
+.target {
+	margin-top: 24px;
+}
+.state {
+	position: relative;
+}
+.target-img {
+	right: 19px;
+	top: -6px;
+	position: absolute;
+	cursor: pointer;
+}
+.state-notice {
+	margin: 14px 0 8px;
+	text-align: center;
+	color: var(--color-gray01);
+}
+
+
 
 .ad {
 	border: 1px solid;
