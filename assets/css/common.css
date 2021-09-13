@@ -44,6 +44,11 @@
   /* 더 추가사항이 있을까요?*/
 }
 
+body {
+	font-size: var(--font-medium);
+	font-weight: var(--font-normal);
+}
+
 .wrap {
 	padding-top: 44px;
 	min-width: 375px;
@@ -69,6 +74,45 @@
 	align-items: center;
 }
 
+/* title */
 .title {
 	font-weight: 500;
+}
+
+
+/* graph */
+.graph {
+	width: 200px;
+	height: 20px;
+	background-color: var(--color-gray04);
+	position: relative
+}
+.graph-state {
+	width: calc(100% - 82px);
+	margin: 0 45px 0 35px;
+	height: 6px;
+	border-radius: 4px;
+	box-shadow: 0 0 4px rgba(0, 0, 0, .25);
+}
+.state-bar {
+	position: absolute;
+	background-color: var(--color-yellow02);
+	height: 20px;
+	width: 30%;
+	left: 0;
+	top: 0;
+}
+.state-pointer {
+	width: 4px;
+	height: 15px;
+	border-radius: 5px;
+	position: absolute;
+	background-color: var(--color-orange02);
+	top: -7px;
+	right: 20px;
+	border: 2px solid #fff;
+	box-shadow: 0 0 4px rgba(0, 0, 0, rgba(0, 0, 0, .25));
+}
+.graph-state .state-bar {
+	height: 6px;
 }
