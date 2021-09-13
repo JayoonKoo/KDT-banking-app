@@ -80,9 +80,10 @@ body {
 }
 
 
-
+/* 광고 */
 .ad {
-	border: 1px solid;
+	margin-top: 20px;
+	text-align: center;
 }
 
 .transaction {
