@@ -45,8 +45,8 @@
 }
 
 .wrap {
-	border: 1px solid red;
 	padding-top: 44px;
+	min-width: 375px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -59,6 +59,7 @@
 /* nav */
 .nav-items {
 	background-color: var(--nav-bg);
+	min-width: 375px;
 	position: fixed;
 	display: flex;
 	bottom: 0;
@@ -66,4 +67,8 @@
 	height: 58px;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.title {
+	font-weight: 500;
 }
