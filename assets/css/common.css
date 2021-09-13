@@ -46,7 +46,7 @@
 
 .wrap {
 	border: 1px solid red;
-	margin-top: 44px;
+	padding-top: 44px;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -66,6 +66,4 @@
 	height: 58px;
 	justify-content: space-around;
 	align-items: center;
-}
-.nav-item {
 }
