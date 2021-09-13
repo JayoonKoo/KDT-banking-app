@@ -18,7 +18,7 @@ body {
 }
 .home .title {
 	width: 33.333333%;
-	font-size: 18px;
+	font-size: var(--font-large);
 	display: flex;
 	justify-content: center;
 }
@@ -34,27 +34,51 @@ body {
 	cursor: pointer;
 }
 
+
 /* 계좌정보 */
 .account-info {
+	position: relative;
+	background-color: #fff;
 	margin: 33px 48px 25px;
-	border: 1px solid;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+	border-radius: 8px;
 }
 .account-number {
 	color: var(--color-gray01);
-	font-weight: 500;
 	margin: 17px 19px 26px;
 	text-align: center;
 }
 .balance {
-	font-weight: 500;
+	text-align: center;
+	letter-spacing: 1.5px;
 }
 .balance-text {
-	font-size: 24px;
-	font-weight: 500;
+	font-size: var(--font-xlarge);
+	margin-right: 2px;
 }
-.balance-text + span {
-	font-size: 14px;
+.btn-transfer {
+	top: 17px;
+	right: 19px;
+	position: absolute;
 }
+.target {
+	margin-top: 24px;
+}
+.state {
+	position: relative;
+}
+.target-img {
+	right: 19px;
+	top: -6px;
+	position: absolute;
+	cursor: pointer;
+}
+.state-notice {
+	margin: 14px 0 8px;
+	text-align: center;
+	color: var(--color-gray01);
+}
+
 
 
 .ad {
