@@ -2,8 +2,25 @@ body {
 	background-color: var(--body-color);
 }
 
-header {
-	border: 1px solid ;
+/* header */
+.home header {
+	margin: 12px 21px 0 27px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.profile-image img{
+	width: 43px;
+	display: block;
+}
+.home .title {
+	font-size: 18px;
+}
+.icons > img + img {
+	margin-left: 18px;
+}
+.icons > img {
+	cursor: pointer;
 }
 
 .account-info {
