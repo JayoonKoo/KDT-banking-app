@@ -127,3 +127,6 @@ button {
 	border: 0;
 	outline: none;
 }
+a {
+	color: inherit;
+}
