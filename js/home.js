@@ -48,10 +48,11 @@ export default class Home {
 
 	createDailyCost(date, cost) {
 		const transaction = `
-			<div class="daily-cost">${date}</div>
-			<span class="cost">
-				<span class="cost-sum">${cost}</span> 원 지출
-			</span>
+			<div class="daily-cost">${date}
+				<span class="cost">
+					<span class="cost-sum">${cost}</span> 원 지출
+				</span>
+			</div>
 		`
 
 		return transaction
@@ -61,7 +62,7 @@ export default class Home {
 		return dailyHistory.map(data => {
 			const {income, history, price} = data;
 			return (`
-				<li class="transaction-item>
+				<li class="transaction-item">
 					<span class="item-name">${history}</span>
 					<span class="item-cost ${income}">${price}</span>
 				</li>
