@@ -1,4 +1,5 @@
 import Api from "./api.js";
+import Swiper from 'https://unpkg.com/swiper@7/swiper-bundle.esm.browser.min.js';
 
 export default class Home {
 	_state;
@@ -40,7 +41,9 @@ export default class Home {
 			transactionDaily.innerHTML = [dailyCost, transactioItem].join('');
 
 			this._container.appendChild(transactionDaily);
+
 		}
+		this.makeSlide("piggy-bank");
 	}
 
 	createDailyCost(date, cost) {
@@ -70,6 +73,29 @@ export default class Home {
 		let cost = 0
 		dailyHistory.forEach(item => cost += item.price);
 		return cost;
+	}
+
+	makeSlide(ulClass) {
+		const pigUl = document.querySelector(`.${ulClass}`);
+		pigUl.classList.add("swiper");
+		for (let pig of pigUl.children) {
+			pig.classList.add('swiper-slide');
+		}
+
+		const wrapper = `
+			<div class="swiper-wrapper">
+				${pigUl.innerHTML}
+			</div>
+		`;
+
+		pigUl.innerHTML = wrapper;
+
+		const swiper = new Swiper(".swiper", {
+			slidesPerView: 'auto',
+			freeMode: {
+				eabled: true
+			}
+		});
 	}
 }
 
