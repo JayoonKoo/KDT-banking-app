@@ -152,9 +152,24 @@ body {
 	right: 0;
 	bottom: 0;
 	overflow-y: auto;
+	margin: 0 34px;
 }
 .transaction-histories::-webkit-scrollbar {
 	display: none;
+}
+.daily-cost {
+	font-weight: var(--font-bold);
+	margin-bottom: 5px;
+	margin-top: 40px;
+}
+.cost {
+	font-weight: var(--font-normal);
+	color: var(--color-gray03);
+	float: right;
+}
+.transaction-item {
+	padding: 10px 0;
+	border-bottom: 1px solid var(--bar-color) ;
 }
 
 /* swiper */
