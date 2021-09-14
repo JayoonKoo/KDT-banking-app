@@ -110,10 +110,9 @@ body {
 }
 /* 저금통 */
 .piggy-bank {
-	border: 1px solid;
 	position: relative;
 	z-index: 100;
-	margin-top: 25px;
+	margin: 25px 34px 0;
 	display: flex;
 }
 /* 일일 내역 상세 */
