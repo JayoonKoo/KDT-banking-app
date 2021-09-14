@@ -86,10 +86,45 @@ body {
 	text-align: center;
 }
 
+/* 거래내역 */
 .transaction {
+	height: 52%;
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	background-color: #f5f5f5;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	box-shadow: 0px -5px 14px 0px #BD901C14;
+}
+.up-button {
+	width: 48px;
+	height: 3px;
+	background-color: var(--color-gray04);
+	border-radius: 4px;
+	position: absolute;
+	top: 4px;
+	left: calc(50% - 24px);
+	cursor: pointer;
+}
+/* 저금통 */
+.piggy-bank {
 	border: 1px solid;
+	position: relative;
+	z-index: 100;
+	margin-top: 25px;
+	display: flex;
+}
+/* 일일 내역 상세 */
+.transaction-histories {
+	position: absolute;
+	top: 90px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+}
+.transaction-histories::-webkit-scrollbar {
+	display: none;
 }
