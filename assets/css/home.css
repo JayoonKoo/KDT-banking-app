@@ -132,6 +132,18 @@ body {
 .pig-goal > span + span {
 	margin-top: 4px;
 }
+
+.pig-create > button {
+	cursor: pointer;
+	display: flex;
+	height: 100%;
+	align-items: center;
+}
+.icon-plus {
+	display: block;
+	margin-right: 5px;
+	margin-left: 10px;
+}
 /* 일일 내역 상세 */
 .transaction-histories {
 	position: absolute;
