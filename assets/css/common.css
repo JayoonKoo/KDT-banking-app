@@ -82,10 +82,11 @@ body {
 
 /* graph */
 .graph {
-	width: 200px;
-	height: 20px;
+	width: 162px;
+	height: 47px;
 	background-color: var(--color-gray04);
-	position: relative
+	position: relative;
+	border-radius: 6px;
 }
 .graph-state {
 	width: calc(100% - 82px);
@@ -97,10 +98,12 @@ body {
 .state-bar {
 	position: absolute;
 	background-color: var(--color-yellow02);
-	height: 20px;
+	height: 100%;
 	width: 30%;
 	left: 0;
 	top: 0;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
 }
 .state-pointer {
 	width: 4px;
@@ -115,4 +118,10 @@ body {
 }
 .graph-state .state-bar {
 	height: 6px;
+}
+.graph.orange .state-bar{
+	background-color: var(--color-orange02);
+}
+.graph.navy .state-bar{
+	background-color: var(--color-navy02);
 }
