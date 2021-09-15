@@ -1,7 +1,9 @@
 export default class Data {
+	_isModal;
 	_bankList;
 
 	constructor() {
+		this._isModal = false;
 		this._bankList = [];
 	}
 
