@@ -1,10 +1,17 @@
 export default class Data {
 	_isModal;
 	_bankList;
+	static _labels;
+	_dailyData;
 
 	constructor() {
 		this._isModal = false;
 		this._bankList = [];
+		Data._labels = [];
+		for (let i=2; i<=30; i+=2) {
+			Data._labels.push(String(i).padStart(2, "0"));
+		}
+		this._dailyData = [];
 	}
 
 	set bankList(bankInfo) {
@@ -15,8 +22,8 @@ export default class Data {
 		return this._bankList;
 	}
 
-	getDaliyHistory(ago) {
-		const queryDate = this.getQueyrDate(ago);
+	getDaliyHistory(ago, now=new Date()) {
+		const queryDate = this.getQueyrDate(ago, now);
 		return this._bankList.bankList.filter(e=> {
 			if (e.date === queryDate) {
 				return true;
@@ -24,8 +31,7 @@ export default class Data {
 		})
 	}
 
-	getQueyrDate(ago) {
-		const now = new Date();
+	getQueyrDate(ago, now) {
 		const [year, month, date] = [now.getFullYear(), now.getMonth(), now.getDate()];
 
 		const agoDate = new Date(year, month, date + ago);
@@ -33,5 +39,30 @@ export default class Data {
 		const queryDate = `${agoYear}-${String(agoMonth + 1).padStart(2, "0")}-${String(agoDay).padStart(2, "0")}`;
 
 		return queryDate
+	}
+
+	calcDailyDataPerMonth(month) {
+		const now = new Date(2021, month);
+		const lastDay = new Date(2021, month + 1, 0).getDate();
+		
+		this._dailyData = Data._labels.map(day => {
+			day = Number(day);
+			if (day === 30 && lastDay === 31) {
+				return (
+					this.getDaliyHistory(day+1, now).reduce((cost, item) => cost + item.price , 0) + 
+					this.getDaliyHistory(day, now).reduce((cost, item) => cost + item.price , 0) + 
+					this.getDaliyHistory(day-1, now).reduce((cost, item) => cost + item.price, 0)
+				);
+			} else {
+				return (
+					this.getDaliyHistory(day, now).reduce((cost, item) => cost + item.price , 0) + 
+					this.getDaliyHistory(day-1, now).reduce((cost, item) => cost + item.price, 0)
+					)
+			}
+		});
+	}
+
+	get dailyData() {
+		return this._dailyData;
 	}
 }
