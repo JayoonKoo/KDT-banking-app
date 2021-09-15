@@ -3,6 +3,7 @@ export default class Data {
 	_bankList;
 	static _labels;
 	_dailyData;
+	_categoryData;
 
 	constructor() {
 		this._isModal = false;
@@ -12,15 +13,9 @@ export default class Data {
 			Data._labels.push(String(i).padStart(2, "0"));
 		}
 		this._dailyData = [];
+		this._categoryData = [];
 	}
 
-	set bankList(bankInfo) {
-		this._bankList = bankInfo;
-	}
-
-	get bankList() {
-		return this._bankList;
-	}
 
 	getDaliyHistory(ago, now=new Date()) {
 		const queryDate = this.getQueyrDate(ago, now);
@@ -60,6 +55,43 @@ export default class Data {
 					)
 			}
 		});
+	}
+
+	calcCategoryDataPerMonth(month) {
+		const dateMonth = `2021-${String(month+1).padStart(2, "0")}`;
+
+		const monthBank = this._bankList.bankList.filter(item => {
+			const compare = item.date.split('-')
+			compare.pop();
+			return compare.join('-') === dateMonth;
+		})
+
+		this._categoryData = monthBank.reduce((data, item) => {
+			if (!data[item.classify]) {
+				data[item.classify] = item.price;
+			} else {
+				data[item.classify] += item.price;
+			}
+			return data;
+		}, {})
+
+		console.log(this._categoryData);
+	}
+
+	get categoryData() {
+		return this._categoryData;
+	}
+
+	static get labels() {
+		return Data._labels;
+	}
+
+	set bankList(bankInfo) {
+		this._bankList = bankInfo;
+	}
+
+	get bankList() {
+		return this._bankList;
 	}
 
 	get dailyData() {
