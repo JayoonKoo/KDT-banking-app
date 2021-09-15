@@ -10,7 +10,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+      integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <link rel="stylesheet" href="./assets/css/main.css" />
+		<script type="module" src="./js/managemnet.js" defer></script>
     <title>Expenditure Management</title>
   </head>
   <body>
@@ -34,16 +41,68 @@
         <!-- 일간 리포트 -->
         <section class="daily-report">
           <h2 class="sub-title">일간 리포트</h2>
-          <div class="graph graph-daily"></div>
+          <div class="graph graph-daily">
+						<canvas id="myChart"></canvas>
+					</div>
         </section>
         <!-- 월간 지출 패턴 -->
         <section class="monthly-pattern">
           <h2 class="sub-title">6월 지출 패턴</h2>
-          <div class="graph graph-circle"></div>
+          <div class="graph graph-circle">
+						<canvas id="month-chart"></canvas>
+					</div>
           <ul class="categories">
             <li class="category-item">
               <div class="category-info">
-                <img src="./assets/images/car.svg" alt="주유비" class="category-image" />
+                <img
+                  src="./assets/images/car.svg"
+                  alt="주유비"
+                  class="category-image"
+                />
+                <span class="category-name">주유비</span>
+              </div>
+              <span class="category-cost"><span>56,000</span>원</span>
+            </li>
+						<li class="category-item">
+              <div class="category-info">
+                <img
+                  src="./assets/images/car.svg"
+                  alt="주유비"
+                  class="category-image"
+                />
+                <span class="category-name">주유비</span>
+              </div>
+              <span class="category-cost"><span>56,000</span>원</span>
+            </li>
+						<li class="category-item">
+              <div class="category-info">
+                <img
+                  src="./assets/images/car.svg"
+                  alt="주유비"
+                  class="category-image"
+                />
+                <span class="category-name">주유비</span>
+              </div>
+              <span class="category-cost"><span>56,000</span>원</span>
+            </li>
+						<li class="category-item">
+              <div class="category-info">
+                <img
+                  src="./assets/images/car.svg"
+                  alt="주유비"
+                  class="category-image"
+                />
+                <span class="category-name">주유비</span>
+              </div>
+              <span class="category-cost"><span>56,000</span>원</span>
+            </li>
+						<li class="category-item">
+              <div class="category-info">
+                <img
+                  src="./assets/images/car.svg"
+                  alt="주유비"
+                  class="category-image"
+                />
                 <span class="category-name">주유비</span>
               </div>
               <span class="category-cost"><span>56,000</span>원</span>
