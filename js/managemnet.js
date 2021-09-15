@@ -1,50 +1,6 @@
 import Data from "./data.js";
 import Api from "./api.js";
 
-const labels = [];
-for (let i=2; i<=30; i+=2) {
-	labels.push(String(i).padStart(2, "0"));
-}
-const data = {
-  labels: labels,
-  datasets: [{
-		label: "ddd",
-    backgroundColor: 'rgb(255, 99, 132)',
-    borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
-  }]
-};
-
-const config = {
-  type: 'line',
-  data: data,
-  options: {}
-};
-
-let myChart = new Chart(document.getElementById('myChart'), config);
-
-
-const monthData = {
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
-
-const monthConfig = {
-  type: 'doughnut',
-  data: monthData,
-};
-
-let monthChart = new Chart(document.getElementById('month-chart'), monthConfig);
-
-
 class Mangement {
 	_api;
 	_state;
@@ -58,9 +14,44 @@ class Mangement {
 		this._api = new Api();
 	}
 
-	renderDailyReport() {
+	renderReport() {
 		const {dailyData} = this._state;
+		const data = {
+			labels: Data.labels,
+			datasets: [{
+				backgroundColor: 'rgb(255, 99, 132)',
+				borderColor: 'rgb(255, 99, 132)',
+				data: dailyData,
+			}]
+		}
+		const config = {
+			type: 'line',
+			data: data,
+			options: {}
+		}
+		new Chart(this._dailyReport, config);
 	}
+
+	renderCategory() {
+		const {cate} = this._state;
+		const data = {
+			datasets: [{
+				data: [300, 50, 100],
+				backgroundColor: [
+					'rgb(255, 99, 132)',
+					'rgb(54, 162, 235)',
+					'rgb(255, 205, 86)'
+				],
+				hoverOffset: 4
+			}]
+		}
+		const config =  {
+			type: 'doughnut',
+			data: data
+		}
+		new Chart(this._categoryReport, config);
+	}
+
 
 	async render() {
 		if (this._state.bankList.length === 0) {
@@ -68,25 +59,15 @@ class Mangement {
 		}
 		const month = new Date().getMonth();
 		this._state.calcDailyDataPerMonth(month);
-
-		console.log(this._state.dailyData);
+		this._state.calcCategoryDataPerMonth(month);
+		this.renderReport();
+		this.renderCategory();
 	}
 
 }
 
 const state = new Data();
 
-const man = new Mangement(state);
+const man = new Mangement(state, 'myChart', 'month-chart');
 man.render()
 
-
-class Report {
-	_data;
-	_config;
-
-	constructor(data, option) {
-		this._config = {
-			
-		}
-	}
-}
