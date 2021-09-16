@@ -135,21 +135,26 @@ export default class Home {
 				const {pageY} = event;
 				const {y} = upButtonRect;
 				moveAt(pageY);
-				if (pageY < 124 || pageY > y + 10) {
-					document.removeEventListener('mousemove', onMouseMove);
-				}
+				// if (pageY < 124 || pageY > y + 10) {
+				// 	document.removeEventListener('mousemove', onMouseMove);
+				// }
 			}
 		
 			// mousemove로 공을 움직입니다.
 			document.addEventListener('mousemove', onMouseMove);
 		
 			// 공을 드롭하고, 불필요한 핸들러를 제거합니다.
-			upButton.onmouseup = function() {
+			// upButton.onmouseup = function() {
+			// 	document.removeEventListener('mousemove', onMouseMove);
+			// 	upButton.onmouseup = null;
+			// };
+			
+			document.onmouseup = function() {
 				document.removeEventListener('mousemove', onMouseMove);
-				upButton.onmouseup = null;
-			};
-		
+				document.onmouseup = null;
+			}
 		};
+
 		
 		upButton.ondragstart = function() {
 			return false;
