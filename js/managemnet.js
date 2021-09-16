@@ -17,20 +17,56 @@ class Mangement {
 
 	renderReport() {
 		const {dailyData} = this._state;
+		const dailyAvg = [];
 		const data = {
 			labels: Data.labels,
 			datasets: [{
-				backgroundColor: 'rgb(255, 99, 132)',
-				borderColor: 'rgb(255, 99, 132)',
+				backgroundColor: '#38c976',
 				data: dailyData,
+				barThickness: 5,
 			}]
 		}
 		const config = {
-			type: 'line',
+			type: 'bar',
 			data: data,
-			options: {}
+			options: {
+				plugins: {
+					legend: {
+						display: false
+					}
+				},
+			},
 		}
-		new Chart(this._dailyReport, config);
+		var mixedChart = new Chart(this._dailyReport, {
+			type: 'bar',
+			data: {
+					datasets: [{
+							label: 'Bar Dataset',
+							backgroundColor: '#38c976',
+							data: dailyData,
+							barThickness: 5,
+							// this dataset is drawn below
+							order: 2
+					}, {
+							label: 'Line Dataset',
+							borderColor: "#ff5f00",
+							data: dailyData,
+							type: 'line',
+							borderDash: [10],
+							// this dataset is drawn on top
+							order: 1
+					}],
+					labels: Data.labels,
+			},
+			options: {
+				plugins: {
+					legend: {
+						display: false
+					}
+				},
+			},
+	  });
+		// new Chart(this._dailyReport, config);
 	}
 
 	renderCategory() {
@@ -59,14 +95,24 @@ class Mangement {
 					'rgb(0, 80, 177)',
 					'rgb(164, 195, 84)',
 				],
+				weight: 0.1,
 				hoverOffset: 4
 			}]
 		}
 		const config =  {
 			type: 'doughnut',
-			data: data
+			data: data,
+			options: {
+				plugins: {
+					legend: {
+						display: false
+					}
+				},
+				cutout: "80%",
+			},
 		}
-		new Chart(this._categoryReport, config);
+		const ctx = new Chart(this._categoryReport, config);
+
 	}
 
 	renderCategoryList() {
