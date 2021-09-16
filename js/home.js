@@ -52,7 +52,7 @@ export default class Home {
 		const transaction = `
 			<div class="daily-cost">${date}
 				<span class="cost">
-					<span class="cost-sum">${cost}</span> 원 지출
+					<span class="cost-sum">${cost.toLocaleString()}</span> 원 지출
 				</span>
 			</div>
 		`
@@ -66,7 +66,7 @@ export default class Home {
 			return (`
 				<li class="transaction-item">
 					<span class="item-name">${history}</span>
-					<span class="item-cost ${income}">${price}</span>
+					<span class="item-cost ${income}">${price.toLocaleString()}</span>
 				</li>
 			`);
 		})
