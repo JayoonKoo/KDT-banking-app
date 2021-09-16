@@ -3,6 +3,9 @@
 body {
 	background-color: var(--body-color);
 }
+.in {
+	color: var(--color-orange03);
+}
 
 /* header */
 .home header {
