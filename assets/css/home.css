@@ -59,9 +59,11 @@ body {
 	margin-right: 2px;
 }
 .btn-transfer {
+	z-index: 100;
 	top: 17px;
 	right: 19px;
 	position: absolute;
+	cursor: pointer;
 }
 .target {
 	margin-top: 24px;
@@ -73,6 +75,8 @@ body {
 	right: 19px;
 	top: -6px;
 	position: absolute;
+}
+.target-img button {
 	cursor: pointer;
 }
 .state-notice {
@@ -168,6 +172,8 @@ body {
 	float: right;
 }
 .transaction-item {
+	display: flex;
+	justify-content: space-between;
 	padding: 10px 0;
 	border-bottom: 1px solid var(--bar-color) ;
 }
