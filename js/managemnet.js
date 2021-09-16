@@ -133,7 +133,7 @@ class Mangement {
                 />
                 <span class="category-name">주유비</span>
               </div>
-              <span class="category-cost"><span>${oiling}</span>원</span>
+              <span class="category-cost"><span>${oiling.toLocaleString()}</span>원</span>
             </li>
 						<li class="category-item">
               <div class="category-info">
@@ -144,7 +144,7 @@ class Mangement {
                 />
                 <span class="category-name">건강관리비</span>
               </div>
-              <span class="category-cost"><span>${health}</span>원</span>
+              <span class="category-cost"><span>${health.toLocaleString()}</span>원</span>
             </li>
 						<li class="category-item">
               <div class="category-info">
@@ -155,7 +155,7 @@ class Mangement {
                 />
                 <span class="category-name">외식비</span>
               </div>
-              <span class="category-cost"><span>${eatout}</span>원</span>
+              <span class="category-cost"><span>${eatout.toLocaleString()}</span>원</span>
             </li>
 						<li class="category-item">
               <div class="category-info">
@@ -166,7 +166,7 @@ class Mangement {
                 />
                 <span class="category-name">장보기</span>
               </div>
-              <span class="category-cost"><span>${mart}</span>원</span>
+              <span class="category-cost"><span>${mart.toLocaleString()}</span>원</span>
             </li>
 						<li class="category-item">
               <div class="category-info">
@@ -177,7 +177,7 @@ class Mangement {
                 />
                 <span class="category-name">상점</span>
               </div>
-              <span class="category-cost"><span>${shopping}</span>원</span>
+              <span class="category-cost"><span>${shopping.toLocaleString()}</span>원</span>
             </li>
 		`;
 
