@@ -75,7 +75,6 @@ export default class Data {
 			return data;
 		}, {})
 
-		console.log(this._categoryData);
 	}
 
 	get categoryData() {
