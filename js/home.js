@@ -44,6 +44,8 @@ export default class Home {
 
 		}
 		this.makeSlide("piggy-bank");
+
+		this.moveMenu();
 	}
 
 	createDailyCost(date, cost) {
@@ -97,6 +99,61 @@ export default class Home {
 				eabled: true
 			}
 		});
+	}
+
+	moveMenu() {
+		const upButton = document.querySelector('.wrap-button');
+		const transaction = document.querySelector('.transaction');
+		const {y, height} = transaction.getBoundingClientRect();
+		const upButtonRect = upButton.getBoundingClientRect();
+
+		upButton.onmousedown = function(event) {
+
+			let shiftY = event.clientY - transaction.getBoundingClientRect().top;
+		
+			transaction.style.position = 'absolute';
+			transaction.style.zIndex = 1000;
+			document.body.append(transaction);
+		
+			moveAt(event.pageY);
+		
+			// 초기 이동을 고려한 좌표 (pageX, pageY)에서
+			// 공을 이동합니다.
+			function moveAt(pageY) {
+				let top = pageY - shiftY;
+				if (top < 124) {
+					top = 124
+				} else if (top > y ) {
+					top = y;
+				}
+				const newHeight = height +  y - top;
+				transaction.style.top = `${top}px`;
+				transaction.style.height = `${newHeight}px`;
+			}
+		
+			function onMouseMove(event) {
+				const {pageY} = event;
+				const {y} = upButtonRect;
+				moveAt(pageY);
+				if (pageY < 124 || pageY > y + 10) {
+					document.removeEventListener('mousemove', onMouseMove);
+				}
+			}
+		
+			// mousemove로 공을 움직입니다.
+			document.addEventListener('mousemove', onMouseMove);
+		
+			// 공을 드롭하고, 불필요한 핸들러를 제거합니다.
+			upButton.onmouseup = function() {
+				document.removeEventListener('mousemove', onMouseMove);
+				upButton.onmouseup = null;
+			};
+		
+		};
+		
+		upButton.ondragstart = function() {
+			return false;
+		};
 	}
 }
 
