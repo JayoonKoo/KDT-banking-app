@@ -53,7 +53,7 @@ Vscode에 Live Server 익스텐션을 설치한 이후에 index.html 파일을 �
       "history": "샐러드",
       "price": 10000
     },
-		...
+		//...
 }
 ```
 
@@ -64,6 +64,8 @@ Vscode에 Live Server 익스텐션을 설치한 이후에 index.html 파일을 �
 - CSS는 페이지 별로 스타일을 구성하고 공통으로 사용하는 common.css를 사용하여 공통 요소를 묶었다.
 - git flow를 사용하여 기능별로 feature를 나누어서 develop에 머지하는 방법을 사용하였다.
 - gitHub Pages를 사용하여 배포하였다.
+
+<br/>
 
 ## 주요 기능
 
