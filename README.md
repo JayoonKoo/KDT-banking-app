@@ -4,7 +4,7 @@
 
 배포 : [https://jayoonkoo.github.io/KDT-banking-app/](https://jayoonkoo.github.io/KDT-banking-app/)
 
-## 사용 기술
+### 사용 기술
 
 <p align='center'>
     <img src="https://img.shields.io/badge/Javascript-yellow"/>
