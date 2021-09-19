@@ -35,8 +35,9 @@ Vscode에 Live Server 익스텐션을 설치한 이후에 index.html 파일을 �
 - 자바스크립트를 사용하여 구현했다.
 - 서버에서 지출에 대한 데이터를 받아와서 UI를 그리는 상황을 만들기 위해서 [https://syoon0624.github.io/json/test.json](https://syoon0624.github.io/json/test.json) 에 데이터를 fetch를 이용하여 받아 왔다.
 
+
 ```json
-//https://syoon0624.github.io/json/test.json
+//https://syoon0624.github.io/json/test.json 데이터 예시
 {
   "bankList": [
     {
@@ -53,7 +54,6 @@ Vscode에 Live Server 익스텐션을 설치한 이후에 index.html 파일을 �
       "history": "샐러드",
       "price": 10000
     }
-		//...
 }
 ```
 
