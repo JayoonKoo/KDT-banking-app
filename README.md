@@ -1,6 +1,6 @@
 # KDT Bank App
 
-💵 지출에 대한 정보를 받아와서 날짜 별 지출 기록 밑 차트를 보여주는 웹 어플리케이션
+💵 지출에 대한 정보를 받아와서 날짜 별 지출 기록 및 차트를 보여주는 웹 어플리케이션
 
 배포 : [https://jayoonkoo.github.io/KDT-banking-app/](https://jayoonkoo.github.io/KDT-banking-app/)
 
