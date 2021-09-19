@@ -67,10 +67,13 @@ export default class Data {
 		})
 
 		this._categoryData = monthBank.reduce((data, item) => {
-			if (!data[item.classify]) {
-				data[item.classify] = item.price;
-			} else {
-				data[item.classify] += item.price;
+			const {income, price} = item;
+			if (income === 'out') {
+				if (!data[item.classify]) {
+					data[item.classify] = price;
+				} else {
+					data[item.classify] += price;
+				}
 			}
 			return data;
 		}, {})
