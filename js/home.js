@@ -73,8 +73,13 @@ export default class Home {
 	}
 
 	getCost(dailyHistory) {
-		let cost = 0
-		dailyHistory.forEach(item => cost += item.price);
+		const cost = dailyHistory.reduce((cost, item) => {
+			const {income, price} = item;
+			if (income === "out") {
+				cost += price;
+			}
+			return cost;
+		}, 0);
 		return cost;
 	}
 
