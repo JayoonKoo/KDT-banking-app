@@ -52,7 +52,7 @@ Vscode에 Live Server 익스텐션을 설치한 이후에 index.html 파일을 �
       "classify": "health",
       "history": "샐러드",
       "price": 10000
-    },
+    }
 		//...
 }
 ```
